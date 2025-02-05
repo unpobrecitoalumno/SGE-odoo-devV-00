@@ -7,7 +7,7 @@ class Categoria(models.Model):
     # El valor _name condiciona el nombre de la tabla y es interno de Odoo
     # conviene siempre que usemos como prefijo el nombre técnico de nuestro módulo seguido de un punto
     # Debemos usar siempre minúsculas
-    _name = 'sge_libreria.sge_categoria'
+    _name = 'sge_libreria.categoria'
     # El valor _description es un texto legible en algunas partes de la aplicación
     # por ejemplo desde Ajustes > Técnico > Modelo
     _description = 'Categoría' 
