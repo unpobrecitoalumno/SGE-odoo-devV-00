@@ -27,7 +27,6 @@ viene dado por el nombre del directorio cuando lo creamos con odoo scaffold
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'views/views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
