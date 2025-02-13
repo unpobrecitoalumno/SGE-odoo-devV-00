@@ -30,3 +30,6 @@ class Libro(models.Model):
         ('1', 'Regular'),
         ('2', 'Mano'),        
     ], string='Estado', default='0') # Etiqueta y valor por defecto
+    
+    
+    categoria_id = fields.Many2one('sge_libreria.categoria', string='Categoría')

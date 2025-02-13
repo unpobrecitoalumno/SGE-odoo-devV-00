@@ -7,6 +7,7 @@
         <tree string="Libro">
           <field name="name"></field>
           <field name="precio" />
+          <field name="categoria_id" />
         </tree>
       </field>
     </record>
@@ -19,6 +20,7 @@
             <group>
               <field name="name"></field>
               <field name="precio"></field>
+              <field name="categoria_id" />
             </group>
           </sheet>
         </form>
