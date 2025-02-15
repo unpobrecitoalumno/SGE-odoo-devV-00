@@ -7,6 +7,10 @@
         <tree string="Categoría">
           <field name="name"></field>
           <field name="description" />
+          <!-- usar un campo xxx2many en un listado sólo muestra el número de registros -->
+          <!-- Si se quiere ver una lista de todos los libros, una opción sería hacer un campo calculado
+          que concatenara sus nombres -->
+          <field name="libro_ids" optional="hide"/>
         </tree>
       </field>
     </record>
@@ -19,6 +23,18 @@
             <group>
               <field name="name"></field>
               <field name="description"></field>
+              <!-- Podemos hacer uso de un atributo xxx2many en un formulario, para ver de forma anidada un listado -->
+              <field name="libro_ids">
+                <!-- Dentro de la etiqueta field definimos una subvista tree con los campos que queramos ver -->
+                <tree string="Libros">
+                  <field name="name"></field>
+                  <field name="precio" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                  <field name="currency_id" optional="hide"/>
+                </tree>
+                <!-- Alternativamente a usar un tree anidado, también puede dar mucha usabilidad definir el field 
+                con algún tipo de widget específico para campos xxx2many 
+                https://poncesoft.blogspot.com/2015/09/widgets-para-campos-many2many-odoo.html -->
+              </field>
             </group>
           </sheet>
         </form>
