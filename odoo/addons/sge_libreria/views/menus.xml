@@ -6,9 +6,15 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-        <record id="sge_libreria.libro_action" model="ir.actions.act_window">
+    <record id="sge_libreria.libro_action" model="ir.actions.act_window">
         <field name="name">Libro</field>
         <field name="res_model">sge_libreria.libro</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="sge_libreria.autor_action" model="ir.actions.act_window">
+        <field name="name">Autor</field>
+        <field name="res_model">sge_libreria.autor</field>
         <field name="view_mode">tree,form</field>
     </record>
 
@@ -30,5 +36,12 @@
         action="sge_libreria.libro_action"
         parent="sge_libreria.root"
         sequence="15"/>
+
+    <menuitem
+        id="sge_libreria.autor_menu"
+        name="Autores"
+        action="sge_libreria.autor_action"
+        parent="sge_libreria.root"
+        sequence="20"/>
   </data>
 </odoo>

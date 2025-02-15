@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_sge_libreria.categoria_users,sge_libreria.categoria_users,model_sge_libreria_categoria,base.group_user,1,1,1,0
 access_sge_libreria.libro_users,sge_libreria.libro_users,model_sge_libreria_libro,base.group_user,1,1,1,0
+access_sge_libreria.autor_users,sge_libreria.autor_users,model_sge_libreria_autor,base.group_user,1,1,1,0

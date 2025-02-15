@@ -1,0 +1,30 @@
+<odoo>
+  <data>
+    <record id="sge_libreria.autor_tree" model="ir.ui.view">
+      <field name="name">sge_libreria.autor.tree</field>
+      <field name="model">sge_libreria.autor</field>
+      <field name="arch" type="xml">
+        <tree string="autor">
+          <field name="name"></field>
+          <field name="fecha_nacimiento"/>
+          <field name="nacionalidad_id"/>
+        </tree>
+      </field>
+    </record>
+    <record id="sge_libreria.autor_form" model="ir.ui.view">
+      <field name="name">sge_libreria.autor.form</field>
+      <field name="model">sge_libreria.autor</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group>
+              <field name="name"></field>
+              <field name="fecha_nacimiento"/>
+              <field name="nacionalidad_id"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+  </data>
+</odoo>
