@@ -26,7 +26,9 @@ services:
     ports:
       - "8069:8069"
     tty: true
-    command: -- --dev=reload
+    # Esta configuración permite que el módulo se actualice cada vez que arrancamos Odoo
+    # Recuerda ver los logs del contenedor en caso de errores Docker > Contenedor de Odoo > View Logs
+    command: odoo --update=sge_libreria --load=web --dev=reload
     # command: odoo scaffold module_technical_name /mnt/extra-addons
     volumes:
       - ./odoo/addons:/mnt/extra-addons
