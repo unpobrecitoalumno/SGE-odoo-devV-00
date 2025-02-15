@@ -6,7 +6,9 @@
       <field name="arch" type="xml">
         <tree string="Libro">
           <field name="name"></field>
-          <field name="precio" />
+          <!-- Podemos ver precio y moneda en una única columna -->
+          <field name="precio" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+          <field name="currency_id" optional="hide"/>
           <!-- Los campos relacionales, como categoria_id, se pueden usar como cualquier otro en vistas.
           Odoo nos mostrará el atributo name del objeto relacionado. -->
           <field name="categoria_id" />
@@ -22,6 +24,8 @@
             <group>
               <field name="name"></field>
               <field name="precio"></field>
+              <!-- En el formulario podemos permitir la selección de la moneda -->
+              <field name="currency_id" />
               <!-- Los campos relacionales, como categoria_id, se pueden usar como cualquier otro en vistas.
               Odoo nos mostrará el atributo name del objeto relacionado. -->
               <field name="categoria_id" />

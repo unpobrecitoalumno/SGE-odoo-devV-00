@@ -16,8 +16,14 @@ class Libro(models.Model):
     # Conviene que siempre tengamos un atributo llamado literalmente name
     # Usar atajo oofchar para generar fragmento de código
     name = fields.Char('Título', required=True)
-    # Usar atajo ooffloat para generar fragmento de código
-    precio = fields.Float('Precio')
+    # Ahora que sabemos hacer relaciones many2one podemos usar campos Monetary en lugar de Float
+    # Usar atajo oofmonetary, esto permite que el módulo sea multidivisa
+    precio = fields.Monetary('Precio')
+    # Los campos Monetary requieren que hagamos una relación con un modelo que viene de base con Odoo res.currency
+    # Se pueden ver otros modelos interesantes del módulo base https://github.com/odoo/odoo/tree/17.0/odoo/addons/base/data
+    # como res.country, res.lang, ...
+    # Si damos un nombre diferente a currency_id deberemos indicarlo como segundo parámetro a la definición anterior con fields.Monetary
+    currency_id = fields.Many2one('res.currency', string='Moneda')
     # Usar atajo oofinteger para generar fragmento de código
     ejemplares = fields.Integer('Ejemplares')
     # Usar atajo oofdate para generar fragmento de código
