@@ -7,6 +7,8 @@
         <tree string="Libro">
           <field name="name"></field>
           <field name="precio" />
+          <!-- Los campos relacionales, como categoria_id, se pueden usar como cualquier otro en vistas.
+          Odoo nos mostrará el atributo name del objeto relacionado. -->
           <field name="categoria_id" />
         </tree>
       </field>
@@ -20,6 +22,8 @@
             <group>
               <field name="name"></field>
               <field name="precio"></field>
+              <!-- Los campos relacionales, como categoria_id, se pueden usar como cualquier otro en vistas.
+              Odoo nos mostrará el atributo name del objeto relacionado. -->
               <field name="categoria_id" />
             </group>
           </sheet>

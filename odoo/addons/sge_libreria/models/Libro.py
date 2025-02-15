@@ -31,5 +31,11 @@ class Libro(models.Model):
         ('2', 'Mano'),        
     ], string='Estado', default='0') # Etiqueta y valor por defecto
     
-    
+    # Usar atajo oofmany2one
+    # Por convención en odoo los campos relacionales many2one tienen como sufijo "_id"
+    # El primer parámetro indica el nombre del modelo que es nuestro compañero en la relación (su valor _name)
+    # El parámetro string es la etiqueta que verá el usuario
+    # Cuando tenemos relaciones entre clases, es conveniente tener un atributo llamado exactamente name, no confundir con _name
     categoria_id = fields.Many2one('sge_libreria.categoria', string='Categoría')
+
+    
