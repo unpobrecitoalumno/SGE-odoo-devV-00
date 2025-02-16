@@ -29,6 +29,17 @@
               <!-- Los campos relacionales, como categoria_id, se pueden usar como cualquier otro en vistas.
               Odoo nos mostrará el atributo name del objeto relacionado. -->
               <field name="categoria_id" />
+              <!-- Alternativa a hacer un tree anidado -->
+              <field name="autor_ids" widget="many2many_kanban">
+                <kanban>
+                    <field name="name"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <field name="name"/>
+                        </t>
+                    </templates>
+                </kanban>
+              </field>
             </group>
           </sheet>
         </form>

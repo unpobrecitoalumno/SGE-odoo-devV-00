@@ -21,6 +21,17 @@
               <field name="name"></field>
               <field name="fecha_nacimiento"/>
               <field name="nacionalidad_id"/>
+              <!-- Como alternativa a hacer un tree anidado, podemos definir un kanban -->
+              <field name="libro_ids" widget="many2many_kanban">
+                <kanban>
+                    <field name="name"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <field name="name"/>
+                        </t>
+                    </templates>
+                </kanban>
+              </field>
             </group>
           </sheet>
         </form>

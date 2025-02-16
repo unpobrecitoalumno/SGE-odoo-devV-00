@@ -44,4 +44,16 @@ class Libro(models.Model):
     # Cuando tenemos relaciones entre clases, es conveniente tener un atributo llamado exactamente name, no confundir con _name
     categoria_id = fields.Many2one('sge_libreria.categoria', string='Categoría')
 
-    
+    # Usar atajo oofmany2many, esta relación creará una tabla auxiliar que gestionará Odoo
+    # El primer parámetro indica el nombre del modelo que es nuestro compañero en la relación (su valor _name)
+    # El parámetro string es la etiqueta que verá el usuario
+    # Por defecto la tabla auxiliar tomará el nombre concatenando el nombre de
+    # las dos tablas relacionadas seguido del sufijo "_rel", lo cual puede generar nombres muy largos
+    # Por ejemplo sge_libreria_autor_sge_libreria_libro_rel
+    # El parámetro relation nos permite definir el nombre de esta tabla auxiliar
+    autor_ids = fields.Many2many('sge_libreria.autor', relation="sge_libreria_autor_libro_rel", string='Autores')
+        
+    # ADVERTENCIA: Si se cometen muchos errores al definir campos relacionados
+    # o se cambia varias veces los nombres o tipos de relación, es posible
+    # que la base de datos quede inconsistente. En ese caso es mejor borrarla
+    # y reinicializarla http://localhost:8069/web/database/manager 
